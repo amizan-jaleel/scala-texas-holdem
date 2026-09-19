@@ -39,6 +39,12 @@ sbt "run letters"
 *HINT: h = hearts = ♥, d = diamonds = ♦, c = clubs = ♣, s = spades = ♠*  
 The symbols are unicode characters that cannot be rendered by every console, use letters if you encounter rendering issues.
 
+The first `sbt run` generates `src/main/resources/HandRanks.dat`, the 130 MB lookup table the
+hand evaluator reads. It used to be stored in Git LFS, which is no longer enabled on this
+repository, so it is built locally instead and kept out of git. To build it without sbt, run
+`tools\generate-handranks.ps1` on Windows or `tools/generate-handranks.sh` elsewhere; either
+way it needs nothing but a JDK 11 or newer and takes a few seconds.
+
 #### Playing the Game
 You can use these commands if it is your turn:
 ```
